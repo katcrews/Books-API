@@ -3,12 +3,11 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const bookSchema = new Schema({
-    title:{ type: String, required: true},
-    description: { type: String},
-    year: { type: Number},
-    quantity: { type: Number},
-    imageURL: { type: String, default: 'https://place-puppy.com/350x350'}
-
+    title: String,
+    description: String,
+    year: Number,
+    quantity: Number,
+    imageURL: String
 });
 
 const Book = mongoose.model('Book', bookSchema);
