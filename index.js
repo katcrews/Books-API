@@ -1,7 +1,7 @@
 //dependencies
 const express = require('express');
 const mongoose = require('mongoose');
-
+var cors = require('cors')
 
 //configuration
 require('dotenv').config();
@@ -14,6 +14,7 @@ mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true, useUnifiedTopolo
 
 //middleware
 app.use(express.json())
+app.use(cors());
 
 //controllers
 const booksController = require('./controllers/books_controller.js')

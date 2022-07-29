@@ -54,12 +54,11 @@ books.get('/', (req, res) => {
         })
 });
 
-
 //show
 books.get('/:id', (req, res) => {
     Book.findById()
-        .then(books => {
-            res.status(200).json(books);
+        .then(currentBook => {
+            res.status(200).json(currentBook);
         })
         .catch(err => {
             console.log(err);
